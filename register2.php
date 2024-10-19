@@ -1,3 +1,22 @@
+<?php
+include 'helper/koneksi.php';
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['firstname'] = $_POST['firstname'];
+    $_SESSION['lastname'] = $_POST['lastname'];
+    $_SESSION['date'] = $_POST['date'];
+    $_SESSION['phone'] = $_POST['phone'];
+    $_SESSION['gender'] = $_POST['gender'];
+}
+// Menyimpan data halaman kedua (jika sudah dikirim dari register2.php)
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['newpassword'] = $_POST['newpassword'];
+    $_SESSION['confirmpassword'] = $_POST['confirmpassword'];
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -16,11 +35,11 @@
             style="background: radial-gradient(at 10% 20%, #13072e,#3f2182);">
             <h1 class="text-light text-start mb-4">Register</h1>
             <div class="container">
-                <form>
+                <form action="helper\add.php" method="post">
                     <div class="row mb-4">
                         <div class="col">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Email" name="email">
+                                placeholder="Email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" required>
                         </div>
                     </div>
                     <div class="row mb-1">
@@ -35,7 +54,7 @@
                     </div>
                     <br>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-light" onclick="window.location.href='register1.html'">Back</button>
+                        <button type="button" class="btn btn-light" onclick="window.location.href='register1.php'">Back</button>
                         <button type="submit" class="btn btn-light">Submit</button>
                     </div>
                 </form>
