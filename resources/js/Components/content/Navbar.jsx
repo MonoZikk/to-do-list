@@ -8,7 +8,7 @@ const Navbar = () => {
                 <List size={25} />
             </label>
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Welcome, Mono👋</a>
+                <a className="btn btn-ghost text-xl pointer-events-none">Welcome, Mono👋</a>
             </div>
             <div className="flex-none">
                 <div className="dropdown dropdown-end">

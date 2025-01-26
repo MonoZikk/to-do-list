@@ -21,7 +21,7 @@ const List_Menu = () => {
 
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                             <div className="card-title text-base sm:text-lg">Project Design 1</div>
-                            <div className="rounded-lg text-sm sm:text-center bg-slate-300 px-3 w-fit">
+                            <div className="rounded-lg text-sm sm:text-center bg-slate-200 px-3 w-fit font-bold">
                                 Belum Selesai
                             </div>
                         </div>
@@ -30,7 +30,7 @@ const List_Menu = () => {
 
 
                         <div className="card-actions flex-col sm:flex-row items-start sm:items-center justify-between mt-5 gap-2">
-                            <p className="text-red-500 text-sm bg-slate-300 px-3 rounded-lg w-fit">Deadline: 20 Januari 2023</p>
+                            <p className="text-red-500 font-bold text-sm bg-slate-200 px-3 rounded-lg w-fit">Deadline: 20 Januari 2023</p>
                             {/* <div className="mt-1">
                                 <button className="btn btn-sm btn-ghost">Batal</button>
                                 <button className="btn btn-sm btn-primary ml-2">Selesai</button>
@@ -40,7 +40,8 @@ const List_Menu = () => {
                 </div>
 
 
-            </div>        </>
+            </div>
+        </>
     )
 }
 
